@@ -1,0 +1,1054 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E4BD478-8240-4E43-BFFE-88276C463D15}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PazCitasWA</RootNamespace>
+    <AssemblyName>PazCitasWA</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiciosWS\AdministradorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\CitaWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\CitaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\ConsultorioWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\ConsultorioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\CuentaUsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\EspecialidadWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\EspecialidadWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\HistorialMedicoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\HorarioTrabajoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\HorarioTrabajoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\LineaRecetaMedicamentoWeb.wsdl" />
+    <None Include="Connected Services\ServiciosWS\MedicamentoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\MedicamentoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\MedicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\NotaClinicaWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\NotaClinicaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\PacienteWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\PacienteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\PagoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="AsignarEspecialidades.aspx" />
+    <Content Include="AsignarTurnos.aspx" />
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.administrador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.cita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.consultorio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarConsultorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarLineaRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarTurnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.especialidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.historialMedico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertaHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarConsultorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarLineaRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarNotaClinicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSedeEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertarSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.insertaTurnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarConsultorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoXEspXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarNotaClinicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTurnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.medicamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.medico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarConsultorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarNotaClinicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarTurnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.notaClinica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerConsultorioPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerEspecialidadPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerSedePorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.paciente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.receta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.sede.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.seguro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.horarioTrabajo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXEspecialidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerXIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarConsultPorSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarHorarioPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarMedicamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listaCitaPorMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicamentoXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarNotaClinicaXHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarTurnosSemanaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerHistorialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacientexDNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPacienteXiDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerPorIDAdministradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.turnoDisponibleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.verificarCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.eliminarSedeEspecialidadXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.lineaRecetaMedicamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarMedicoXCadenaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarXPacienteCompletoSinDatosPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listar_lineas_x_recetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarAsignadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.marcarNoAsignadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.modificarFechaCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerTurnosLibresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.obtenerXIdCompletoSinDatosPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.generarReporteCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarConsulPorSedeNoAsigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.usernameExisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listarPacienteXCadenaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.consultorioExisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.generarReporteCitasXSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiciosWS\PazCitasWA.ServiciosWS.listaCitaPorMedicoXestadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiciosWS\RecetaWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\ReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\SedeEspecialidadWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\SedeWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\SedeWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\SeguroWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\SeguroWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\servicios.disco" />
+    <None Include="Connected Services\ServiciosWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiciosWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServiciosWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-duotone-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-light-300.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.woff" />
+    <Content Include="Content\Fonts\webfonts\fa-thin-100.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\ServiciosWS\AdministradorWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\HistorialMedicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\LineaRecetaMedicamentoWeb.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\MedicoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\PagoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\RecetaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiciosWS\TurnoWS.wsdl" />
+    <None Include="Connected Services\ServiciosWS\TurnoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Content\Fonts\css\all.css" />
+    <Content Include="Content\Fonts\css\all.min.css" />
+    <Content Include="Content\Fonts\css\brands.css" />
+    <Content Include="Content\Fonts\css\brands.min.css" />
+    <Content Include="Content\Fonts\css\duotone.css" />
+    <Content Include="Content\Fonts\css\duotone.min.css" />
+    <Content Include="Content\Fonts\css\fontawesome.css" />
+    <Content Include="Content\Fonts\css\fontawesome.min.css" />
+    <Content Include="Content\Fonts\css\light.css" />
+    <Content Include="Content\Fonts\css\light.min.css" />
+    <Content Include="Content\Fonts\css\regular.css" />
+    <Content Include="Content\Fonts\css\regular.min.css" />
+    <Content Include="Content\Fonts\css\solid.css" />
+    <Content Include="Content\Fonts\css\solid.min.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.min.css" />
+    <Content Include="Content\Fonts\css\thin.css" />
+    <Content Include="Content\Fonts\css\thin.min.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.min.css" />
+    <Content Include="Content\Fonts\css\v4-shims.css" />
+    <Content Include="Content\Fonts\css\v4-shims.min.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="Content\LoginModern\login-modern.css" />
+    <Content Include="Content\sidebars.css" />
+    <Content Include="DetalleCitaPaciente.aspx" />
+    <Content Include="DetalleEspecialidadPaciente.aspx" />
+    <Content Include="EmitirExamen.aspx" />
+    <Content Include="EmitirReceta.aspx" />
+    <Content Include="GestionarEmpleados.aspx" />
+    <Content Include="GestionarMedicos.aspx" />
+    <Content Include="GestionarSedesConsultorios.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HistorialesMedicos.aspx" />
+    <Content Include="HomeAdmin.aspx" />
+    <Content Include="HomeMedico.aspx" />
+    <Content Include="HomePaciente.aspx" />
+    <Content Include="Images\doctorGenericImage.png" />
+    <Content Include="Images\genericDoctor.png" />
+    <Content Include="Images\imagen-clinica.jpg" />
+    <Content Include="Images\WarningPerson.png" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="ListarAdministradores.aspx" />
+    <Content Include="ListarCitasMedico.aspx" />
+    <Content Include="ListarCitasPaciente.aspx" />
+    <Content Include="ListarConsultorios.aspx" />
+    <Content Include="ListarEspecialidades.aspx" />
+    <Content Include="ListarEspecialidadesPaciente.aspx" />
+    <Content Include="ListarMedicos.aspx" />
+    <Content Include="ListarMedicosPaciente.aspx" />
+    <Content Include="ListarPacientes.aspx" />
+    <Content Include="ListarSedes.aspx" />
+    <Content Include="ListarSedesPaciente.aspx" />
+    <Content Include="ListarSeguros.aspx" />
+    <Content Include="ListarTratamientos.aspx" />
+    <Content Include="ListarTurnos.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MisPacientes.aspx" />
+    <Content Include="RegistrarAdministrador.aspx" />
+    <Content Include="RegistrarCitaPaciente.aspx" />
+    <Content Include="RegistrarConsultorio.aspx" />
+    <Content Include="RegistrarEspecialidad.aspx" />
+    <Content Include="RegistrarMedico.aspx" />
+    <Content Include="RegistrarPaciente.aspx" />
+    <Content Include="RegistrarSede.aspx" />
+    <Content Include="RegistrarSeguro.aspx" />
+    <Content Include="RegistrarTratamiento.aspx" />
+    <Content Include="RegistrarTurnosMedico.aspx" />
+    <Content Include="Reportes.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="PazCitasAdmin.Master" />
+    <Content Include="PazCitasPaciente.Master" />
+    <Content Include="PazCitasMedico.Master" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\LoginModern\login-modern.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarAdmin.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarConsultorio.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarEspecialidad.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarLineaMedicamento.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarMedico.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarPaciente.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarSede.js" />
+    <Content Include="Scripts\PazCitasS\RegistrarSeguro.js" />
+    <Content Include="Scripts\scriptAdmin.js" />
+    <Content Include="Scripts\sidebars.js" />
+    <Content Include="Content\styleAdmin.css" />
+    <Content Include="VerCitaMedico.aspx" />
+    <Content Include="VisualizarReporte.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsignarEspecialidades.aspx.cs">
+      <DependentUpon>AsignarEspecialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarEspecialidades.aspx.designer.cs">
+      <DependentUpon>AsignarEspecialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarTurnos.aspx.cs">
+      <DependentUpon>AsignarTurnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarTurnos.aspx.designer.cs">
+      <DependentUpon>AsignarTurnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiciosWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleCitaPaciente.aspx.cs">
+      <DependentUpon>DetalleCitaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleCitaPaciente.aspx.designer.cs">
+      <DependentUpon>DetalleCitaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleEspecialidadPaciente.aspx.cs">
+      <DependentUpon>DetalleEspecialidadPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleEspecialidadPaciente.aspx.designer.cs">
+      <DependentUpon>DetalleEspecialidadPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirExamen.aspx.cs">
+      <DependentUpon>EmitirExamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmitirExamen.aspx.designer.cs">
+      <DependentUpon>EmitirExamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirReceta.aspx.cs">
+      <DependentUpon>EmitirReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmitirReceta.aspx.designer.cs">
+      <DependentUpon>EmitirReceta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs" />
+    <Compile Include="GestionarEmpleados.aspx.cs">
+      <DependentUpon>GestionarEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarEmpleados.aspx.designer.cs">
+      <DependentUpon>GestionarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarMedicos.aspx.cs">
+      <DependentUpon>GestionarMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarMedicos.aspx.designer.cs">
+      <DependentUpon>GestionarMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarSedesConsultorios.aspx.cs">
+      <DependentUpon>GestionarSedesConsultorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarSedesConsultorios.aspx.designer.cs">
+      <DependentUpon>GestionarSedesConsultorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialesMedicos.aspx.cs">
+      <DependentUpon>HistorialesMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistorialesMedicos.aspx.designer.cs">
+      <DependentUpon>HistorialesMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAdmin.aspx.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeAdmin.aspx.designer.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeMedico.aspx.cs">
+      <DependentUpon>HomeMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeMedico.aspx.designer.cs">
+      <DependentUpon>HomeMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePaciente.aspx.cs">
+      <DependentUpon>HomePaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePaciente.aspx.designer.cs">
+      <DependentUpon>HomePaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarAdministradores.aspx.cs">
+      <DependentUpon>ListarAdministradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarAdministradores.aspx.designer.cs">
+      <DependentUpon>ListarAdministradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCitasMedico.aspx.cs">
+      <DependentUpon>ListarCitasMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCitasMedico.aspx.designer.cs">
+      <DependentUpon>ListarCitasMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCitasPaciente.aspx.cs">
+      <DependentUpon>ListarCitasPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCitasPaciente.aspx.designer.cs">
+      <DependentUpon>ListarCitasPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarConsultorios.aspx.cs">
+      <DependentUpon>ListarConsultorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarConsultorios.aspx.designer.cs">
+      <DependentUpon>ListarConsultorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEspecialidades.aspx.cs">
+      <DependentUpon>ListarEspecialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEspecialidades.aspx.designer.cs">
+      <DependentUpon>ListarEspecialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEspecialidadesPaciente.aspx.cs">
+      <DependentUpon>ListarEspecialidadesPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEspecialidadesPaciente.aspx.designer.cs">
+      <DependentUpon>ListarEspecialidadesPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarMedicos.aspx.cs">
+      <DependentUpon>ListarMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarMedicos.aspx.designer.cs">
+      <DependentUpon>ListarMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarMedicosPaciente.aspx.cs">
+      <DependentUpon>ListarMedicosPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarMedicosPaciente.aspx.designer.cs">
+      <DependentUpon>ListarMedicosPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPacientes.aspx.cs">
+      <DependentUpon>ListarPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPacientes.aspx.designer.cs">
+      <DependentUpon>ListarPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarSedes.aspx.cs">
+      <DependentUpon>ListarSedes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSedes.aspx.designer.cs">
+      <DependentUpon>ListarSedes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarSedesPaciente.aspx.cs">
+      <DependentUpon>ListarSedesPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSedesPaciente.aspx.designer.cs">
+      <DependentUpon>ListarSedesPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarSeguros.aspx.cs">
+      <DependentUpon>ListarSeguros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSeguros.aspx.designer.cs">
+      <DependentUpon>ListarSeguros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarTratamientos.aspx.cs">
+      <DependentUpon>ListarTratamientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTratamientos.aspx.designer.cs">
+      <DependentUpon>ListarTratamientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarTurnos.aspx.cs">
+      <DependentUpon>ListarTurnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTurnos.aspx.designer.cs">
+      <DependentUpon>ListarTurnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisPacientes.aspx.cs">
+      <DependentUpon>MisPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPacientes.aspx.designer.cs">
+      <DependentUpon>MisPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PazCitasAdmin.Master.cs">
+      <DependentUpon>PazCitasAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PazCitasAdmin.Master.designer.cs">
+      <DependentUpon>PazCitasAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PazCitasMedico.Master.cs">
+      <DependentUpon>PazCitasMedico.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PazCitasMedico.Master.designer.cs">
+      <DependentUpon>PazCitasMedico.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PazCitasPaciente.Master.cs">
+      <DependentUpon>PazCitasPaciente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PazCitasPaciente.Master.designer.cs">
+      <DependentUpon>PazCitasPaciente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarAdministrador.aspx.cs">
+      <DependentUpon>RegistrarAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarAdministrador.aspx.designer.cs">
+      <DependentUpon>RegistrarAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCitaPaciente.aspx.cs">
+      <DependentUpon>RegistrarCitaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCitaPaciente.aspx.designer.cs">
+      <DependentUpon>RegistrarCitaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarConsultorio.aspx.cs">
+      <DependentUpon>RegistrarConsultorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarConsultorio.aspx.designer.cs">
+      <DependentUpon>RegistrarConsultorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEspecialidad.aspx.cs">
+      <DependentUpon>RegistrarEspecialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarEspecialidad.aspx.designer.cs">
+      <DependentUpon>RegistrarEspecialidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarMedico.aspx.cs">
+      <DependentUpon>RegistrarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarMedico.aspx.designer.cs">
+      <DependentUpon>RegistrarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarPaciente.aspx.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPaciente.aspx.designer.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarSede.aspx.cs">
+      <DependentUpon>RegistrarSede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarSede.aspx.designer.cs">
+      <DependentUpon>RegistrarSede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarSeguro.aspx.cs">
+      <DependentUpon>RegistrarSeguro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarSeguro.aspx.designer.cs">
+      <DependentUpon>RegistrarSeguro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarTratamiento.aspx.cs">
+      <DependentUpon>RegistrarTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarTratamiento.aspx.designer.cs">
+      <DependentUpon>RegistrarTratamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarTurnosMedico.aspx.cs">
+      <DependentUpon>RegistrarTurnosMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarTurnosMedico.aspx.designer.cs">
+      <DependentUpon>RegistrarTurnosMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosEmail\ServicioEmail.cs" />
+    <Compile Include="VerCitaMedico.aspx.cs">
+      <DependentUpon>VerCitaMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaMedico.aspx.designer.cs">
+      <DependentUpon>VerCitaMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarReporte.aspx.cs">
+      <DependentUpon>VisualizarReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarReporte.aspx.designer.cs">
+      <DependentUpon>VisualizarReporte.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiciosWS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53716</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53716/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
